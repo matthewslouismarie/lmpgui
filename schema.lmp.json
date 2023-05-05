@@ -1,0 +1,193 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "LMP configuration file.",
+    "description": "A complete or partial configuration file for LMP.",
+    "type": "object",
+    "required": [
+        "assetsFolderPath",
+        "wadsUsedByMap"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "assetsFolderPath": {
+            "title": "Asset folder",
+            "description": "Mandatory. The folder containing all the custom assets the map uses with the standard layout (sprites, models, sound…). It MUST include all the WADs used by the map, including the base ones.",
+            "type": "string"
+        },
+        "removeDevEntities": {
+            "title": "Remove dev entities?",
+            "description": "Whether to remove dev entities.",
+            "type": "boolean"
+        },
+        "wadsUsedByMap": {
+            "title": "List of WADs",
+            "description": "MANDATORY. List of all the WAD filenames the map requires.",
+            "type": "array",
+            "items": {
+                "description": "Filename of the WAD file",
+                "type": "string",
+                "pattern": ".+\\.wad$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "mess": {
+            "title": "MESS",
+            "description": "Settings for MESS.",
+            "type": "object",
+            "required": [
+                "executablePath"
+            ],
+            "properties": {
+                "executablePath": {
+                    "title": "Executable",
+                    "description": "Absolute path to the MESS executable.",
+                    "type": "string"
+                },
+                "params": {
+                    "title": "Parameters",
+                    "description": "Parameters for MESS.",
+                    "type": "string"
+                },
+                "templatesFolderPath": {
+                    "title": "Templates folder",
+                    "description": "Absolute path to the MESS templates if using the MESS templating engine.",
+                    "type": "string"
+                },
+                "transformMapFiles": {
+                    "title": "Process MESS templates?",
+                    "description": "Whether to use the MESS templating engine.",
+                    "type": "boolean"
+                }
+            }
+        },
+        "copyAfterBuild": {
+            "title": "Copy build to folder",
+            "description": "Optional. Copy the build to the specified folder.",
+            "type": "string"
+        },
+        "resguy": {
+            "title": "Resguy",
+            "description": "RECOMMENDED. If specified, generates a RES file and copy all the assets the map uses into the build folder. If not specified, assets used by the map won’t be copied into the build folder!",
+            "type": "object",
+            "required": [
+                "executablePath",
+                "ignoreFilePath",
+                "isEnabled"
+            ],
+            "properties": {
+                "isEnabled": {
+                    "title": "Enable Resguy?",
+                    "description": "Whether to enable Resguy.",
+                    "type": "boolean"
+                },
+                "executablePath": {
+                    "title": "Executable",
+                    "description": "Absolute path to the Resguy executable.",
+                    "type": "string"
+                },
+                "ignoreFilePath": {
+                    "title": "resguy_default_content.txt",
+                    "description": "Absolute path to the Resguy list of ignored files (files already included with the game or the mod).",
+                    "type": "string"
+                }
+            }
+        },
+        "spriteMaker": {
+            "title": "SpriteMaker",
+            "description": "Optional. If specified, generates or updates sprites before build.",
+            "type": "object",
+            "properties": {
+                "isEnabled": {
+                    "title": "Enable SpriteMaker?",
+                    "description": "Whether to run SpriteMaker before compiling the map.",
+                    "type": "boolean"
+                },
+                "executablePath": {
+                    "title": "Executable",
+                    "description": "Absolute path to the SpriteMaker executable.",
+                    "type": "string"
+                },
+                "imagesFolderPath": {
+                    "title": "Images folder",
+                    "description": "Absolute path to the folder containing the images to convert into sprites.",
+                    "type": "string"
+                }
+            }
+        },
+        "wadMaker": {
+            "title": "WadMaker",
+            "description": "Optional. If specified, generates or updates the specified WAD file before build.",
+            "type": "object",
+            "properties": {
+                "isEnabled": {
+                    "title": "Enable WadMaker?",
+                    "description": "Whether to run WadMaker before compiling the map.",
+                    "type": "boolean"
+                },
+                "executablePath": {
+                    "title": "Executable",
+                    "description": "Absolute path to the WadMaker executable",
+                    "type": "string"
+                },
+                "imagesFolderPath": {
+                    "title": "Image folder",
+                    "description": "Absolute path to the folder containing the images to include in the WAD to generate.",
+                    "type": "string"
+                },
+                "wadToBuildFilename": {
+                    "title": "Filename of WAD to build",
+                    "description": "Name of the WAD file to generate.",
+                    "type": "string"
+                }
+            }
+        },
+        "compilers": {
+            "title": "Map compilers",
+            "description": "MANDATORY if given file is of the RMF or MAP file format.",
+            "type": "object",
+            "properties": {
+                "bspExecutablePath": {
+                    "title": "BSP executable",
+                    "description": "Absolute path to the BSP executable.",
+                    "type": "string"
+                },
+                "bspParams": {
+                    "title": "BSP parameters",
+                    "description": "Parameters for BSP.",
+                    "type": "string"
+                },
+                "csgExecutablePath": {
+                    "title": "CSG executable",
+                    "description": "Absolute path to the CSG executable.",
+                    "type": "string"
+                },
+                "csgParams": {
+                    "title": "CSG parameters",
+                    "description": "Parameters for CSG.",
+                    "type": "string"
+                },
+                "radExecutablePath": {
+                    "title": "RAD executable",
+                    "description": "Absolute path to the RAD executable.",
+                    "type": "string"
+                },
+                "radParams": {
+                    "title": "RAD parameters",
+                    "description": "Parameters for RAD.",
+                    "type": "string"
+                },
+                "visExecutablePath": {
+                    "title": "VIS executable",
+                    "description": "Absolute path to the VIS executable.",
+                    "type": "string"
+                },
+                "visParams": {
+                    "title": "VIS parameters",
+                    "description": "Parameters for VIS.",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

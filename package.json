@@ -1,0 +1,19 @@
+{
+  "name": "lmpgui",
+  "version": "1.0.0",
+  "description": "GUI for LMP.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "author": "Louis-Marie Matthews",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^24.2.0"
+  }
+}
