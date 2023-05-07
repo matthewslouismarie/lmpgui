@@ -12,6 +12,7 @@
         "assetsFolderPath": {
             "title": "Asset folder",
             "description": "Mandatory. The folder containing all the custom assets the map uses with the standard layout (sprites, models, sound…). It MUST include all the WADs used by the map, including the base ones.",
+            "pattern": "^([A-Z]:)?[\/\\].+$",
             "type": "string"
         },
         "removeDevEntities": {
@@ -42,6 +43,7 @@
                 "executablePath": {
                     "title": "Executable",
                     "description": "Absolute path to the MESS executable.",
+                    "pattern": "^([A-Z]:)?[\/\\].+[.]exe$",
                     "type": "string"
                 },
                 "params": {
@@ -52,6 +54,7 @@
                 "templatesFolderPath": {
                     "title": "Templates folder",
                     "description": "Absolute path to the MESS templates if using the MESS templating engine.",
+                    "pattern": "^([A-Z]:)?[\/\\].+$",
                     "type": "string"
                 },
                 "transformMapFiles": {
@@ -64,6 +67,7 @@
         "copyAfterBuild": {
             "title": "Copy build to folder",
             "description": "Optional. Copy the build to the specified folder.",
+            "pattern": "^([A-Z]:)?[\/\\].+$",
             "type": "string"
         },
         "resguy": {
@@ -84,6 +88,7 @@
                 "executablePath": {
                     "title": "Executable",
                     "description": "Absolute path to the Resguy executable.",
+                    "pattern": "^([A-Z]:)?[\/\\].+[.]exe$",
                     "type": "string"
                 },
                 "ignoreFilePath": {
@@ -106,11 +111,13 @@
                 "executablePath": {
                     "title": "Executable",
                     "description": "Absolute path to the SpriteMaker executable.",
+                    "pattern": "^([A-Z]:)?[\/\\].+[.]exe$",
                     "type": "string"
                 },
                 "imagesFolderPath": {
                     "title": "Images folder",
                     "description": "Absolute path to the folder containing the images to convert into sprites.",
+                    "pattern": "^([A-Z]:)?[\/\\].+$",
                     "type": "string"
                 }
             }
@@ -128,11 +135,13 @@
                 "executablePath": {
                     "title": "Executable",
                     "description": "Absolute path to the WadMaker executable",
+                    "pattern": "^([A-Z]:)?[\/\\].+[.]exe$",
                     "type": "string"
                 },
                 "imagesFolderPath": {
                     "title": "Image folder",
                     "description": "Absolute path to the folder containing the images to include in the WAD to generate.",
+                    "pattern": "^([A-Z]:)?[\/\\].+$",
                     "type": "string"
                 },
                 "wadToBuildFilename": {
@@ -150,6 +159,7 @@
                 "bspExecutablePath": {
                     "title": "BSP executable",
                     "description": "Absolute path to the BSP executable.",
+                    "pattern": "^([A-Z]:)?[\/\\].+[.]exe$",
                     "type": "string"
                 },
                 "bspParams": {
@@ -160,6 +170,7 @@
                 "csgExecutablePath": {
                     "title": "CSG executable",
                     "description": "Absolute path to the CSG executable.",
+                    "pattern": "^([A-Z]:)?[\/\\].+[.]exe$",
                     "type": "string"
                 },
                 "csgParams": {
@@ -170,6 +181,7 @@
                 "radExecutablePath": {
                     "title": "RAD executable",
                     "description": "Absolute path to the RAD executable.",
+                    "pattern": "^([A-Z]:)?[\/\\].+[.]exe$",
                     "type": "string"
                 },
                 "radParams": {
@@ -180,6 +192,7 @@
                 "visExecutablePath": {
                     "title": "VIS executable",
                     "description": "Absolute path to the VIS executable.",
+                    "pattern": "^([A-Z]:)?[\/\\].+[.]exe$",
                     "type": "string"
                 },
                 "visParams": {
