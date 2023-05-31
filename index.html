@@ -5,7 +5,7 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
 
-    <link rel="text-stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <title>LMP GUI</title>
   </head>
   <body>
@@ -23,38 +23,32 @@
     </template>
 
     <template id="tpl-form-row">
-      <div class="form-row">
+      <div class="form-row" data-property="row">
       </div>
     </template>
 
     <template id="tpl-input-string">
-      <div class="form-row">
-        <label data-property="label"></label>
-        <input data-property="input">
-        <p class="p" data-property="help"></p>
-      </div>
+      <label data-property="label"></label>
+      <input data-property="input">
+      <p class="p" data-property="help"></p>
     </template>
-    
+
     <template id="tpl-input-checkbox">
-      <div class="form-row">
-        <input data-property="input" type="checkbox">
-        <label data-property="label"></label>
-        <p class="p" data-property="help"></p>
-      </div>
+      <input data-property="input" type="checkbox">
+      <label data-property="label"></label>
+      <p class="p" data-property="help"></p>
     </template>
 
     <template id="tpl-input-files">
-      <div class="form-row">
-        <label data-property="label"></label>
-        <ul data-property="list">
-        </ul>
-        <input accept=".wad" data-property="input" multiple type="file">
-        <p class="p" data-property="help"></p>
-      </div>
+      <label data-property="label"></label>
+      <ul data-property="list">
+      </ul>
+      <input accept=".wad" data-property="input" multiple type="file">
+      <p class="p" data-property="help"></p>
     </template>
 
     <div id="schema"></div>
-    <!-- You can also require other files to run in this process -->
+
     <script src="./renderer.js"></script>
   </body>
 </html>

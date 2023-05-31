@@ -26,7 +26,7 @@ class FormCreator {
     }
 
     createFormRow(child = null) {
-        const row = this.#tplRow.content.cloneNode()
+        const row = this.#tplRow.content.cloneNode(true).querySelector('[data-property=row]')
         if (null !== child) {
             row.appendChild(child)
         }
